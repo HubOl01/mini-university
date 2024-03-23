@@ -1,35 +1,29 @@
-// // var isLoading: boolean = false;
-// function indexListGroup(name: string): number {
-//     someArray.forEach((value, index) => {
-//         console.log(index); // 0, 1, 2
-//         console.log(value); // 9, 2, 5
-//     });
-// //   isLoading = true;  
-// //   for (var i in getResISUCT.faculties) {
-// //     for (var j in getResISUCT.faculties[i].groups) {
-// //       if (getResISUCT.faculties[i].groups[j].name == name) {
-// //         isLoading = false;
-// //         // isGroup = true;
-// //         return j;
-// //       }
-// //     }
-// //   }
-  
-// //   isLoading = false;
-// //   return 0;
-// }
+import { IFaculty } from '../models/scheduleModel';
+// var isLoading: boolean = false;
+export function indexListGroup(name: string, faculties: Array<IFaculty>): number {
+    let index = 0;
+    faculties.forEach((faculty, i) => {
+        faculty.groups.forEach((group, j)=>{
+            if (faculties[i].groups[j].name == name) {
+                console.log(`Index(indexListGroup) = ${j} (${faculties[i].groups[j].name} == ${name})`)
+                index = j;
+                return j;
+              }
+        })
+    });
+    return index;
+}
 
-// function indexListFacult(name: string): number {
-// //   isLoading = true;
-// //   for ((el, i) in getResISUCT.faculties) {
-// //     for (var j in getResISUCT.faculties[i].groups) {
-// //       if (getResISUCT.faculties[i].groups[j].name == name) {
-// //         // isGroup = true;
-// //         isLoading = false;
-// //         return i;
-// //       }
-// //     }
-// //   }
-// //   isLoading = false;
-// //   return 0;
-// }
+export function indexListFacult(name: string, faculties: Array<IFaculty>): number {
+    let index = 0;
+    faculties.forEach((faculty, i) => {
+        faculty.groups.forEach((group, j)=>{
+            if (faculties[i].groups[j].name == name) {
+                console.log(`Index(indexListFacult) = ${i} (${faculties[i].groups[j].name} == ${name})`)
+                index = i;
+                return i;
+              }
+        })
+    });
+    return index;
+}
