@@ -1,10 +1,10 @@
 import { Panel, PanelHeader, PanelHeaderBack, PanelHeaderButton, Root, SplitCol, SplitLayout, View, usePlatform } from '@vkontakte/vkui';
 import { useActiveVkuiLocation, useGetPanelForView, usePopout, useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
 import { DEFAULT_ROOT, DEFAULT_VIEW, DEFAULT_VIEW_PANELS } from './routes';
-import Schedule from './panels/pages/schedule/Schedule';
+import Schedule from './pages/schedule/Schedule';
 import './App.css';
 import { useState } from 'react';
-import Main from './panels/pages/main/Main';
+import Main from './pages/main/Main';
 
 export const App = () => {
   const mainPanel = DEFAULT_VIEW_PANELS.HOME;

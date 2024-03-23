@@ -1,4 +1,4 @@
-import CardLesson from "../../layouts/CardLesson";
+import CardLesson from "../../components/ui/CardLesson";
 
 export default function Schedule() {
   // const [enableTime, setEnableTime] = useState(false);
@@ -9,13 +9,15 @@ export default function Schedule() {
   // const [locale, setLocale] = useState('ru');
   // const [size, setSize] = useState('m');
   // const [listenDayChangesForUpdate, setListenDayChangesForUpdate] = useState(false);
+  // const ListLoading = withListLoading(List);
+  
   return (
     <>
+      {/* <CardLesson/>
       <CardLesson/>
       <CardLesson/>
       <CardLesson/>
-      <CardLesson/>
-      <CardLesson/>
+      <CardLesson/> */}
     </>
   )
 }
