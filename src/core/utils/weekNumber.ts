@@ -18,21 +18,30 @@ int numOfWeeks(int year) {
   return ((dayOfDec28 - dec28.weekday + 10) / 7).floor();
 } */
 
-export function weekNumber(date: Date): number {
-    const dayOfYear: number = parseInt(new Intl.DateTimeFormat('en-US', { day: 'numeric' }).format(date));
-    let woy: number = Math.floor((dayOfYear - date.getDay() + 10) / 7);
-    if (woy < 1) {
-      woy = numOfWeeks(date.getFullYear() - 1);
-    } else if (woy > numOfWeeks(date.getFullYear())) {
-      woy = 1;
-    }
-    // console.log(`This week: ${woy}`);
-    return woy;
-  }
+// export function weekNumber(date: Date): number {
+//     const dayOfYear: number = parseInt(new Intl.DateTimeFormat('ru', { day: 'numeric' }).format(date));
+//     let woy: number = Math.floor((dayOfYear - date.getDay() + 10) / 7);
+//     if (woy < 1) {
+//       woy = numOfWeeks(date.getFullYear() - 1);
+//     } else if (woy > numOfWeeks(date.getFullYear())) {
+//       woy = 1;
+//     }
+//     // console.log(`This week: ${woy}`);
+//     return woy;
+//   }
   
-  function numOfWeeks(year: number): number {
-    const dec28: Date = new Date(year, 11, 28); // Month in JavaScript Date starts from 0
-    const dayOfDec28: number = parseInt(new Intl.DateTimeFormat('en-US', { day: 'numeric' }).format(dec28));
-    return Math.floor((dayOfDec28 - dec28.getDay() + 10) / 7);
-  }
+//   function numOfWeeks(year: number): number {
+//     const dec28: Date = new Date(year, 11, 28); // Month in JavaScript Date starts from 0
+//     const dayOfDec28: number = parseInt(new Intl.DateTimeFormat('ru', { day: 'numeric' }).format(dec28));
+//     return Math.floor((dayOfDec28 - dec28.getDay() + 10) / 7);
+//   }
   
+
+export function getWeekNumber(date: Date): number {
+  const startOfYear = new Date(date.getFullYear(), 0, 0);
+  const diff = date.getTime() - startOfYear.getTime();
+  const oneWeek = 7 * 24 * 60 * 60 * 1000;
+  const weekNumber = Math.floor((diff / oneWeek) + 1);
+
+  return weekNumber;
+}

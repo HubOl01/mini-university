@@ -1,7 +1,6 @@
 import { Grid } from '@mui/material'
 import { Card } from '@vkontakte/vkui'
 import { ILesson } from '../../models/scheduleModel';
-import { weekNumber } from '../../core/utils/weekNumber';
 // import { DEFAULT_VIEW_PANELS } from '../../routes';
 // import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
 

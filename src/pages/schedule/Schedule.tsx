@@ -1,12 +1,12 @@
 import { Button, Input } from "@vkontakte/vkui";
 import CardLesson from "../../components/ui/CardLesson";
-import { weekNumber } from "../../core/utils/weekNumber";
 import { useState } from "react";
 import { indexListFacult, indexListGroup } from "../../core/utils/indexedGroupAndFacult";
 import { ILesson } from "../../models/scheduleModel";
 import { useQuery } from "react-query";
 import { ScheduleService } from "../../core/services/ScheduleAPI.service";
 import { Weeks } from "../../core/constants/week";
+import { getWeekNumber } from "../../core/utils/weekNumber";
 
 export default function Schedule() {
   // const [enableTime, setEnableTime] = useState(false);
@@ -24,7 +24,9 @@ export default function Schedule() {
   const [textValue, setTextValue] = useState('3-147');
   const [groupValue, setGroupValue] = useState(0);
   const [facultValue, setFacultValue] = useState(0);
-  const thisWeek = weekNumber(new Date()) % 2;
+  const dateNow = new Date(); 
+  const thisWeek = getWeekNumber(dateNow) % 2;
+  console.log(`thisWeek(${dateNow}): ${thisWeek}`)
   return (
     <>
 
@@ -51,7 +53,7 @@ export default function Schedule() {
             Weeks.week1
             // добавить listWidget
             : Weeks.week2
-          // добавить listWidget
+         // добавить listWidget
         }
       </div>
 
