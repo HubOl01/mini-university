@@ -1,4 +1,4 @@
-import { IFaculty } from '../models/scheduleModel';
+import { IFaculty } from '../../models/scheduleModel';
 // var isLoading: boolean = false;
 export function indexListGroup(name: string, faculties: Array<IFaculty>): number {
     let index = 0;

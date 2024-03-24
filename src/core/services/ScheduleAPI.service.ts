@@ -1,5 +1,6 @@
 import axios from "axios";
-import { ISchedule } from "../models/scheduleModel";
+import { ISchedule } from "../../models/scheduleModel";
+import { useQuery } from "react-query";
 // export function getSchedule() {
 //     axios({
 //         method: "GET",
@@ -25,3 +26,4 @@ export const ScheduleService = {
     return response.data;
   },
 };
+

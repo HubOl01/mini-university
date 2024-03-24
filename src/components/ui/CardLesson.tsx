@@ -1,6 +1,7 @@
 import { Grid } from '@mui/material'
 import { Card } from '@vkontakte/vkui'
 import { ILesson } from '../../models/scheduleModel';
+import { weekNumber } from '../../core/utils/weekNumber';
 // import { DEFAULT_VIEW_PANELS } from '../../routes';
 // import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
 
@@ -18,8 +19,8 @@ export default function CardLesson({ lesson }: CardLessonProps) {
     }
     } */
     >
-      <Grid container>
-        <Grid sx={{
+      <div style={{display: 'flex'}}>
+        <div style={{
           width: "80px",
           height: "100%",
           // padding: '10px',
@@ -32,7 +33,7 @@ export default function CardLesson({ lesson }: CardLessonProps) {
           <div>
             {lesson.time.end.slice(0, -3)}
           </div>
-        </Grid>
+        </div>
         <Grid sx={{ padding: '5px' }}>
           <div style={{
             fontWeight: 'bold',
@@ -57,7 +58,7 @@ export default function CardLesson({ lesson }: CardLessonProps) {
           </div>
         </Grid>
 
-      </Grid>
+      </div>
     </Card>
   )
 }

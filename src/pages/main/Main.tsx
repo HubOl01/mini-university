@@ -3,8 +3,8 @@ import { Button, Calendar, Input } from '@vkontakte/vkui';
 import { useQuery } from 'react-query';
 import CardLesson from '../../components/ui/CardLesson';
 import { ILesson } from '../../models/scheduleModel';
-import { ScheduleService } from '../../services/ScheduleAPI.service';
-import { indexListFacult, indexListGroup } from '../../utils/indexedGroupAndFacult';
+import { ScheduleService } from '../../core/services/ScheduleAPI.service';
+import { indexListFacult, indexListGroup } from '../../core/utils/indexedGroupAndFacult';
 
 
 
@@ -23,9 +23,7 @@ export default function Main() {
     ScheduleService.getAll()
   )
 
-  const [textValue, setTextValue] = useState('3-147');
-  const [groupValue, setGroupValue] = useState(0);
-  const [facultValue, setFacultValue] = useState(0);
+  
   return (
     <>
       {/* <FormItem> */}
@@ -36,42 +34,11 @@ export default function Main() {
         }}
         value={value}
         onChange={setValue}
-        // disablePast={true}
-        // disableFuture={true}
         disablePickers={true}
         aria-orientation={'vertical'}
-      // showNeighboringMonth={showNeighboringMonth}
-      // size={'s'}
-      // listenDayChangesForUpdate={listenDayChangesForUpdate}
       />
-      {/* </LocaleProvider> */}
-      {/* </FormItem> */}
-      <div style={{ margin: '10px', display: 'flex' }}>
-        <Input
-          id="group"
-          type="text"
-          defaultValue={textValue}
-          value={textValue}
-          onChange={e => setTextValue(e.target.value)}
-          placeholder="3-147"
-        />
-        <Button
-          onClick={() => {
-            setFacultValue(()=>indexListFacult(textValue, data!.faculties));
-            setGroupValue(()=>indexListGroup(textValue, data!.faculties));
-            console.log(`${facultValue} - ${groupValue}`);
-          }}
-        >Нажми</Button>
-      </div>
-      <div>
-        {data?.faculties ? data.faculties[facultValue].groups[groupValue].lessons.map((lesson: ILesson) => (
 
-          <CardLesson lesson={lesson} />
-
-        ))
-          : <p>There are no schedules</p>
-        }
-      </div>
+      
 
     </>
   )

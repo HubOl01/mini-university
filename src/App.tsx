@@ -21,16 +21,16 @@ export const App = () => {
       // </View>
       <Root activeView={activeView}>
       <View nav={DEFAULT_VIEW} activePanel={activePanel}>
-        <Panel nav={mainPanel}><Main/></Panel>
+        {/* <Panel nav={mainPanel}><Main/></Panel> */}
         <Panel nav={schedulePanel}>
-        <PanelHeader
+        {/* <PanelHeader
             before={
               <PanelHeaderBack
                 onClick={() => routeNavigator.back()}
                 // label={platform === 'vkcom' ? 'Назад' : undefined}
               />
             }
-              ></PanelHeader>
+              ></PanelHeader> */}
           <Schedule /></Panel>
       
       </View>
