@@ -3,7 +3,7 @@ import { IFaculty } from '../../models/scheduleModel';
 export function indexListGroup(name: string, faculties: Array<IFaculty>): number {
     let index = 0;
     faculties.forEach((faculty, i) => {
-        faculty.groups.forEach((group, j)=>{
+        faculty.groups.forEach((_group, j)=>{
             if (faculties[i].groups[j].name == name) {
                 console.log(`Index(indexListGroup) = ${j} (${faculties[i].groups[j].name} == ${name})`)
                 index = j;
@@ -17,7 +17,7 @@ export function indexListGroup(name: string, faculties: Array<IFaculty>): number
 export function indexListFacult(name: string, faculties: Array<IFaculty>): number {
     let index = 0;
     faculties.forEach((faculty, i) => {
-        faculty.groups.forEach((group, j)=>{
+        faculty.groups.forEach((_group, j)=>{
             if (faculties[i].groups[j].name == name) {
                 console.log(`Index(indexListFacult) = ${i} (${faculties[i].groups[j].name} == ${name})`)
                 index = i;

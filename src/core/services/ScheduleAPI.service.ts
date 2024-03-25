@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ISchedule } from "../../models/scheduleModel";
 import { useQuery } from "react-query";
+import { useState } from "react";
 // export function getSchedule() {
 //     axios({
 //         method: "GET",
@@ -27,3 +28,15 @@ export const ScheduleService = {
   },
 };
 
+// export const useSchedules = () => {
+//   const { data } = useQuery(['schedules'], () =>
+//     ScheduleService.getAll()
+//   );
+
+//   const [schedules, setSchedules] = useState<ISchedule>();
+
+//   if (data) {
+//     setSchedules(data);
+//   }
+//   return { schedules, setSchedules };
+// };

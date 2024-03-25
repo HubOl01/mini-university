@@ -7,6 +7,9 @@ import { useQuery } from "react-query";
 import { ScheduleService } from "../../core/services/ScheduleAPI.service";
 import { Weeks } from "../../core/constants/week";
 import { getWeekNumber } from "../../core/utils/weekNumber";
+import ListWidget from "../../containers/ListWidget";
+import { weekdaysList } from "../../core/data/weekdaysList";
+import { Weekdays } from '../../core/constants/weekdays';
 
 export default function Schedule() {
   // const [enableTime, setEnableTime] = useState(false);
@@ -24,9 +27,8 @@ export default function Schedule() {
   const [textValue, setTextValue] = useState('3-147');
   const [groupValue, setGroupValue] = useState(0);
   const [facultValue, setFacultValue] = useState(0);
-  const dateNow = new Date(); 
-  const thisWeek = getWeekNumber(dateNow) % 2;
-  console.log(`thisWeek(${dateNow}): ${thisWeek}`)
+  // const dateNow = new Date();
+  // const thisWeek = getWeekNumber(dateNow) % 2;
   return (
     <>
 
@@ -47,16 +49,26 @@ export default function Schedule() {
           }}
         >Нажми</Button>
       </div>
-      <div>
+      <h2 style={{ textAlign: "center" }}>
         {
-          thisWeek == 1 ?
-            Weeks.week1
-            // добавить listWidget
-            : Weeks.week2
-         // добавить listWidget
-        }
-      </div>
 
+          Weeks.week1
+        }
+      </h2>
+      <div>
+        {/* {weekdaysList.map((_weekday, index)=> <ListWidget ifacult={facultValue} igroup={groupValue} week={1} weekday={index+1} />)} */}
+      </div>
+      <h2 style={{ textAlign: "center" }}>
+        {
+
+          Weeks.week2
+        }
+      </h2>
+      <div>
+        {/* {weekdaysList.map((_weekday, index)=> <ListWidget ifacult={facultValue} igroup={groupValue} week={1} weekday={index+1} />)} */}
+        {/* {facultValue} - {groupValue} */}
+        <ListWidget ifacult={facultValue} igroup={groupValue} week={1} weekday={1} data={data!} />
+      </div>
     </>
   )
 }

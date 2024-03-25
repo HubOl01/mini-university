@@ -1,7 +1,3 @@
-export type GetSchedulesResponse = {
-    data: ISchedule[];
-  };
-
 export interface ISchedule {
     name:      string;
     abbr:      string;
