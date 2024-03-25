@@ -1,3 +1,4 @@
+import { Card } from '@vkontakte/vkui';
 import CardLesson from '../components/ui/CardLesson';
 import { ILesson, ISchedule } from '../models/scheduleModel';
 
@@ -23,9 +24,16 @@ export default function ListWidget({ ifacult, igroup, week, weekday, data }: Lis
 
   return (
     <>
-      {data ? listLessons(week, weekday).map((lesson) => (
+      {data ? listLessons(week, weekday).length > 0 ? listLessons(week, weekday).map((lesson) => (
         <CardLesson lesson={lesson} />
-      )) : <>Нет данных</>}
+      )) : <Card mode="outline" style={{ margin: '10px 10px', textAlign: "center" }}
+      >
+        <div style={{ padding: '20px' }}>
+          <div style={{
+            fontWeight: 'bold',
+            fontSize: '20px',
+          }}>Нет пар</div></div>
+      </Card> : <>Нет данных</>}
     </>
   )
 }

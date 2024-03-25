@@ -1,4 +1,3 @@
-import { Grid } from '@mui/material'
 import { Card } from '@vkontakte/vkui'
 import { ILesson } from '../../models/scheduleModel';
 // import { DEFAULT_VIEW_PANELS } from '../../routes';
@@ -33,7 +32,7 @@ export default function CardLesson({ lesson }: CardLessonProps) {
             {lesson.time.end.slice(0, -3)}
           </div>
         </div>
-        <Grid sx={{ padding: '5px' }}>
+        <div style={{ padding: '5px' }}>
           <div style={{
             fontWeight: 'bold',
             fontSize: '20px',
@@ -55,7 +54,7 @@ export default function CardLesson({ lesson }: CardLessonProps) {
           <div>
             {lesson.teachers.map((teacher, index) => teacher.name + (lesson.teachers.length - 1 != index ? ", " : ''))}
           </div>
-        </Grid>
+        </div>
 
       </div>
     </Card>

@@ -1,15 +1,10 @@
 import { Button, Input } from "@vkontakte/vkui";
-import CardLesson from "../../components/ui/CardLesson";
 import { useState } from "react";
 import { indexListFacult, indexListGroup } from "../../core/utils/indexedGroupAndFacult";
-import { ILesson } from "../../models/scheduleModel";
 import { useQuery } from "react-query";
 import { ScheduleService } from "../../core/services/ScheduleAPI.service";
 import { Weeks } from "../../core/constants/week";
-import { getWeekNumber } from "../../core/utils/weekNumber";
-import ListWidget from "../../containers/ListWidget";
-import { weekdaysList } from "../../core/data/weekdaysList";
-import { Weekdays } from '../../core/constants/weekdays';
+import ListWeekday from "../../containers/ListWeekday";
 
 export default function Schedule() {
   // const [enableTime, setEnableTime] = useState(false);
@@ -55,6 +50,7 @@ export default function Schedule() {
           Weeks.week1
         }
       </h2>
+      <ListWeekday facult={facultValue} group={groupValue} week={2} data={data!} />
       <div>
         {/* {weekdaysList.map((_weekday, index)=> <ListWidget ifacult={facultValue} igroup={groupValue} week={1} weekday={index+1} />)} */}
       </div>
@@ -64,10 +60,8 @@ export default function Schedule() {
           Weeks.week2
         }
       </h2>
+      <ListWeekday facult={facultValue} group={groupValue} week={2} data={data!} />
       <div>
-        {/* {weekdaysList.map((_weekday, index)=> <ListWidget ifacult={facultValue} igroup={groupValue} week={1} weekday={index+1} />)} */}
-        {/* {facultValue} - {groupValue} */}
-        <ListWidget ifacult={facultValue} igroup={groupValue} week={1} weekday={1} data={data!} />
       </div>
     </>
   )
