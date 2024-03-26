@@ -5,6 +5,7 @@ import CardLesson from '../../components/ui/CardLesson';
 import { ILesson } from '../../models/scheduleModel';
 import { ScheduleService } from '../../core/services/ScheduleAPI.service';
 import { indexListFacult, indexListGroup } from '../../core/utils/indexedGroupAndFacult';
+import { CalendarDays } from '@vkontakte/vkui/dist/components/CalendarDays/CalendarDays';
 
 
 
@@ -26,57 +27,27 @@ export default function Main() {
   
   return (
     <>
-      {/* <FormItem> */}
-      {/* <LocaleProvider value={locale}> */}
+      <div>
+        <h1 style={{
+          textAlign: "center"
+        }}>
+          2 неделя
+        </h1>
+      </div>
       <Calendar
         style={{
-          width: '100%'
+          width: '100%',
         }}
+        showNeighboringMonth={true}
+        // ScheduleService
         value={value}
         onChange={setValue}
         disablePickers={true}
         aria-orientation={'vertical'}
+        weekStartsOn={0}
+        
       />
-
-      
 
     </>
   )
 }
-
-/* bool isLoading = false;
-int indexListGroup(var name) {
-  isLoading = true;
-  isGroup = false;
-  print("indexListGroup {${getResISUCT.faculties.length}}");
-  for (int i = 0; i < getResISUCT.faculties.length; i++) {
-    for (int j = 0; j < getResISUCT.faculties[i].groups.length; j++) {
-      if (getResISUCT.faculties[i].groups[j].name == name) {
-        isLoading = false;
-        isGroup = true;
-        return j;
-      }
-    }
-  }
-  isGroup = false;
-  isLoading = false;
-  return 0;
-}
-
-int indexListFacult(var name) {
-  isLoading = true;
-  isGroup = false;
-  print("indexListFacult {${getResISUCT.faculties.length}}");
-  for (int i = 0; i < getResISUCT.faculties.length; i++) {
-    for (int j = 0; j < getResISUCT.faculties[i].groups.length; j++) {
-      if (getResISUCT.faculties[i].groups[j].name == name) {
-        isGroup = true;
-        isLoading = false;
-        return i;
-      }
-    }
-  }
-  isGroup = false;
-  isLoading = false;
-  return 0;
-} */
