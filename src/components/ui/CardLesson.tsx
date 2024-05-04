@@ -19,9 +19,9 @@ export default function CardLesson({ lesson }: CardLessonProps) {
     >
       <div style={{display: 'flex'}}>
         <div style={{
-          width: "80px",
+          // width: "80px",
           height: "100%",
-          // padding: '10px',
+          padding: '20px',
           textAlign: 'center',
           margin: 'auto 0px'
         }}>

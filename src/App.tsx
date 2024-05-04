@@ -10,31 +10,32 @@ export const App = () => {
   const mainPanel = DEFAULT_VIEW_PANELS.MAIN;
   const schedulePanel = DEFAULT_VIEW_PANELS.SCHEDULE;
   const { view: activeView } = useActiveVkuiLocation();
-  const activePanel = useGetPanelForView(DEFAULT_VIEW); 
+  const activePanel = useGetPanelForView(DEFAULT_VIEW);
   const routeNavigator = useRouteNavigator();
   return (
 
-      // <View activePanel={activePanel}>
-      //   <Panel id={activePanel}>
-      //     <Schedule />
-      //   </Panel>
-      // </View>
-      <Root activeView={activeView}>
+    // <View activePanel={activePanel}>
+    //   <Panel id={activePanel}>
+    //     <Schedule />
+    //   </Panel>
+    // </View>
+    <Root activeView={activeView}>
       <View nav={DEFAULT_VIEW} activePanel={activePanel}>
-        <Panel nav={mainPanel}><Main/></Panel>
+        <Panel nav={mainPanel}><Main /></Panel>
         <Panel nav={schedulePanel}>
-        <PanelHeader
+          <PanelHeader
             before={
               <PanelHeaderBack
                 onClick={() => routeNavigator.back()}
-                // label={platform === 'vkcom' ? 'Назад' : undefined}
+              // label={platform === 'vkcom' ? 'Назад' : undefined}
               />
             }
-              ></PanelHeader>
-          <Schedule /></Panel>
-      
+          ></PanelHeader>
+          <Schedule />
+          </Panel>
+
       </View>
-      
+
     </Root>
   );
 };

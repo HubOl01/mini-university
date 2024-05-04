@@ -6,6 +6,7 @@ import { ILesson } from '../../models/scheduleModel';
 import { ScheduleService } from '../../core/services/ScheduleAPI.service';
 import { indexListFacult, indexListGroup } from '../../core/utils/indexedGroupAndFacult';
 import { CalendarDays } from '@vkontakte/vkui/dist/components/CalendarDays/CalendarDays';
+import Schedule from '../schedule/Schedule';
 
 
 
@@ -47,7 +48,7 @@ export default function Main() {
         weekStartsOn={0}
         
       />
-
+      {/* <Schedule/> */}
     </>
   )
 }
