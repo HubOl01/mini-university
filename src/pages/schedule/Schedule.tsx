@@ -19,7 +19,7 @@ export default function Schedule() {
   const { data } = useQuery(['schedules'], () =>
     ScheduleService.getAll()
   )
-  const [textValue, setTextValue] = useState('3-147');
+  const [textValue, setTextValue] = useState('4-147');
   const [groupValue, setGroupValue] = useState(0);
   const [facultValue, setFacultValue] = useState(0);
   // const dateNow = new Date();
@@ -34,7 +34,7 @@ export default function Schedule() {
           defaultValue={textValue}
           value={textValue}
           onChange={e => setTextValue(e.target.value)}
-          placeholder="3-147"
+          placeholder="4-147"
         />
         <Button
           onClick={() => {

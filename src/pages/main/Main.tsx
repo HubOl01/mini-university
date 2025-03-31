@@ -25,7 +25,7 @@ export default function Main() {
     ScheduleService.getAll()
   )
 
-  
+
   return (
     <>
       <div>
@@ -46,9 +46,9 @@ export default function Main() {
         disablePickers={true}
         aria-orientation={'vertical'}
         weekStartsOn={0}
-        
+
       />
-      {/* <Schedule/> */}
+      <Schedule />
     </>
   )
 }
